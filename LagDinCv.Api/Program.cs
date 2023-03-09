@@ -30,34 +30,36 @@ app.MapPost("/api/create", async (TwentySecondModel model) =>
         TemplateDir = "Templates/",
         TempFilesDir = "Templates/TemporaryTemplates/"
     };
-    
+
     var fileName = new TwentySecondCv().Name();
-    
+
     var templateFile = Path.Combine(options.TemplateDir, fileName);
     var document = await File.ReadAllTextAsync(templateFile);
-    
+
     var keyValues = model.ToDictionary();
-    
+
     var template = TemplatingEngine.Replace(document, keyValues, true);
     var tempTemplateName = GetRandomFileNameWithExtension(FileExtension.Tex);
-    
+
     await File.WriteAllTextAsync(
         Path.Combine(options.TempFilesDir, tempTemplateName), template
     );
-    
+
     PdfLatexBuilder pdfLatexBuilder = new();
     GetRandomFileNameWithExtension(FileExtension.Pdf);
-    
+
     pdfLatexBuilder
         .OutputDirectory(options.OutputDir)
         .File(Path.Combine(options.TempFilesDir, tempTemplateName))
         .EnableInstaller()
         .IncludeDirectory(options.TemplateDir)
         .NonStopMode();
-    
+
     await pdfLatexBuilder.Run();
 
-    return StatusCodes.Status201Created;
+    var filePath = new Uri($"/{Path.GetFileNameWithoutExtension(tempTemplateName)}.pdf", UriKind.Relative);
+
+    return Results.Created(filePath, new { });
 });
 
 app.Run();
