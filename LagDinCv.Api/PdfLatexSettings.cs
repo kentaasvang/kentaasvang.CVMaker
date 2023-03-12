@@ -1,4 +1,4 @@
-namespace LagDinCv;
+namespace LagDinCv.Api;
 
 public class PdfLatexSettings
 {
