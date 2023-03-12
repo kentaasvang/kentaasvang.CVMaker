@@ -10,7 +10,7 @@
 *.userosscache
 *.sln.docstates
 .idea/
-LagDinCv/Resumes/**
+LagDinCv.Api/Resumes/**
 LagDinCv.Api/Templates/TemporaryTemplates/**
 
 
