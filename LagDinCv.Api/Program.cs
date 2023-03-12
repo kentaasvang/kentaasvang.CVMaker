@@ -2,12 +2,14 @@ using kentaasvang.PdfLatex;
 using kentaasvang.TemplatingEngine;
 using LagDinCv;
 using LagDinCv.Api;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -18,9 +20,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseCors();
 
-app.MapGet("/", () => "hello, world");
+app.MapGet("/hello", () => "world").RequireCors(opt =>
+{
+    opt.AllowAnyOrigin();
+});
 
 app.MapPost("/api/create", async (TwentySecondModel model) =>
 {
@@ -60,6 +65,27 @@ app.MapPost("/api/create", async (TwentySecondModel model) =>
     var filePath = new Uri($"/{Path.GetFileNameWithoutExtension(tempTemplateName)}.pdf", UriKind.Relative);
 
     return Results.Created(filePath, new { });
+}).RequireCors(opt =>
+{
+    // TODO: be thorough with these setting
+    opt.AllowAnyOrigin();
+    opt.AllowAnyHeader();
+    opt.WithExposedHeaders(HeaderNames.Location);
+});
+
+app.MapGet("resume/{fileName}", (string fileName) 
+    =>
+{
+    var options = new PdfLatexSettings
+    {
+        OutputDir = "Resumes",
+        TemplateDir = "Templates/",
+        TempFilesDir = "Templates/TemporaryTemplates/"
+    };
+    var rootDir = Environment.CurrentDirectory;
+    var resumesDir = Path.Combine(rootDir, options.OutputDir);
+    
+    return Results.File(Path.Combine(resumesDir, fileName), contentType: "application/pdf");
 });
 
 app.Run();
