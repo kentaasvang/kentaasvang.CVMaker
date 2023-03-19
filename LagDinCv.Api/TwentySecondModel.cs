@@ -17,7 +17,6 @@ public class TwentySecondModel : ITemplateModel
 
     public Dictionary<string, string> ToDictionary()
     {
-        // var skills = Skills?.Count != 0 ? "{" + Skills.Name + "/" + Skills.Rating + "}" : string.Empty;
         var skills = string.Empty;
         if (Skills != null && Skills.Any())
         {
@@ -31,7 +30,8 @@ public class TwentySecondModel : ITemplateModel
             // remove last comma
             skills = skills[..^1];
         }
-        var retVal = new Dictionary<string, string>
+        
+        var dictionary = new Dictionary<string, string>
         {
             { "name", Name ?? string.Empty },
             { "jobtitle", JobTitle ?? string.Empty },
@@ -45,7 +45,7 @@ public class TwentySecondModel : ITemplateModel
             { "skill", skills }
         };
 
-        return retVal;
+        return dictionary;
     }
 }
 
