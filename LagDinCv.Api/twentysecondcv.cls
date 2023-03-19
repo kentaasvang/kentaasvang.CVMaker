@@ -151,12 +151,12 @@
 
 		%------------------------------------------------
 
-		\profilesection{Skills}
+		\profilesection{Ferdigheter}
 
 		\skills
 %		\skillstext
 		\scriptsize
-		(*)[The skill scale is from 0 (Fundamental Awareness) to 6 (Expert).]
+		(*)Rangeringen går fra 0 (har hørt om) til 6 (Ekspert).
 			
 		%------------------------------------------------
 			
