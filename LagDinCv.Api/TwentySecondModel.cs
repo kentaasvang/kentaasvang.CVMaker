@@ -12,11 +12,26 @@ public class TwentySecondModel : ITemplateModel
     public string? Website { get; set; }
     public string? Linkedin { get; set; }
     public string? About { get; set; }
-    public Skill? Skill { get; set; }
+    public List<Skill>? Skills { get; set; }
 
 
     public Dictionary<string, string> ToDictionary()
-        => new()
+    {
+        // var skills = Skills?.Count != 0 ? "{" + Skills.Name + "/" + Skills.Rating + "}" : string.Empty;
+        var skills = string.Empty;
+        if (Skills != null && Skills.Any())
+        {
+            skills = "";
+            
+            foreach (var skill in Skills)
+            {
+                skills += "{" + skill.Name + "/" + skill.Rating + "},";
+            }
+            
+            // remove last comma
+            skills = skills[..^1];
+        }
+        var retVal = new Dictionary<string, string>
         {
             { "name", Name ?? string.Empty },
             { "jobtitle", JobTitle ?? string.Empty },
@@ -27,8 +42,11 @@ public class TwentySecondModel : ITemplateModel
             { "emailaddress", EmailAddress ?? string.Empty },
             { "linkedin", Linkedin ?? string.Empty },
             { "about", About ?? string.Empty },
-            { "skill", Skill?.Name != null ? "{" + Skill.Name + "/" + Skill.Rating + "}" : string.Empty }
+            { "skill", skills }
         };
+
+        return retVal;
+    }
 }
 
 public class Skill
