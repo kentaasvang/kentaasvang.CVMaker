@@ -1,5 +1,5 @@
 using LagDinCv.Api;
-using LagDinCv.Api.ApiGroups;
+using LagDinCv.Api.Apis;
 
 var builder = WebApplication.CreateBuilder(args);
 

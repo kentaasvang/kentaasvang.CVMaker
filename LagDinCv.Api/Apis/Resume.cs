@@ -1,9 +1,9 @@
 using LagDinCv.Api.Services;
 using Microsoft.Net.Http.Headers;
 
-namespace LagDinCv.Api.ApiGroups;
+namespace LagDinCv.Api.Apis;
 
-internal static class Api
+internal static class Resume
 {
     public static RouteGroupBuilder MapApi(this IEndpointRouteBuilder routeBuilder)
     {
