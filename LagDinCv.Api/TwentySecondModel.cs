@@ -20,22 +20,14 @@ public class TwentySecondModel : ITemplateModel
         var skills = string.Empty;
         if (Skills != null && Skills.Any())
         {
-            skills = "";
-            
-            foreach (var skill in Skills)
-            {
-                skills += "{" + skill.Name + "/" + skill.Rating + "},";
-            }
-            
-            // remove last comma
-            skills = skills[..^1];
+            skills = ParseSkills(Skills);
         }
         
         var dictionary = new Dictionary<string, string>
         {
             { "name", Name ?? string.Empty },
             { "jobtitle", JobTitle ?? string.Empty },
-            { "dayofbirth", DayOfBirth?.ToString("D") ?? string.Empty },
+            { "dayofbirth", DayOfBirth?.ToString("M-d-yyyy") ?? string.Empty },
             { "nationality", Nationality ?? string.Empty },
             { "phonenumber", PhoneNumber ?? string.Empty },
             { "website", Website ?? string.Empty },
@@ -46,6 +38,15 @@ public class TwentySecondModel : ITemplateModel
         };
 
         return dictionary;
+    }
+
+    private static string ParseSkills(IEnumerable<Skill> skills)
+    {
+        var parsed = skills.Aggregate("", (current, skill) => current + "{" + skill.Name + "/" + skill.Rating + "},");
+
+        // remove last comma
+        parsed = parsed[..^1];
+        return parsed;
     }
 }
 
