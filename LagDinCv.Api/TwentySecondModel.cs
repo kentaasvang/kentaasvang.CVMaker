@@ -6,7 +6,8 @@ public class TwentySecondModel : ITemplateModel
 {
     public int Id { get; set; }
     public required string Name { get; set; }
-    public List<Experience>? Experiences { get; set; }
+    public List<ExperienceModel>? Experiences { get; set; }
+    public List<EducationModel>? Educations { get; set; }
     public string? JobTitle { get; set; }
     public DateTime? DayOfBirth { get; set; }
     public string? Nationality { get; set; }
@@ -40,6 +41,8 @@ public class TwentySecondModel : ITemplateModel
             { "skill", skills }
         };
 
+        // \\twentyitem{2020-}{Lynx Publishing}{Fullstack Developer and DevOps}{Sole developer and DevOps engineer at Lynx Publishing, a content management system for newspapers. }
+        // \\twentyitem {2016-2019}{Noroff's University}{Kristiansand/Nettbasert}{Bachelor of Applied Data Science}
         return dictionary;
     }
 
