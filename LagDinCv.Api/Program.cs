@@ -20,7 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapApi();
+app.MapResumeApi();
 app.UseCors();
 
 app.Run();

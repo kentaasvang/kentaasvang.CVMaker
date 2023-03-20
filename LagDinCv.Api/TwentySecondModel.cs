@@ -1,9 +1,12 @@
+using LagDinCv.Api.Models;
+
 namespace LagDinCv.Api;
 
 public class TwentySecondModel : ITemplateModel
 {
     public int Id { get; set; }
     public required string Name { get; set; }
+    public List<Experience>? Experiences { get; set; }
     public string? JobTitle { get; set; }
     public DateTime? DayOfBirth { get; set; }
     public string? Nationality { get; set; }

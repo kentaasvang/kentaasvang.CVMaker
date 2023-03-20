@@ -3,9 +3,9 @@ using Microsoft.Net.Http.Headers;
 
 namespace LagDinCv.Api.Apis;
 
-internal static class Resume
+internal static class ResumeApi
 {
-    public static RouteGroupBuilder MapApi(this IEndpointRouteBuilder routeBuilder)
+    public static RouteGroupBuilder MapResumeApi(this IEndpointRouteBuilder routeBuilder)
     {
         var group = routeBuilder.MapGroup("/api");
       
