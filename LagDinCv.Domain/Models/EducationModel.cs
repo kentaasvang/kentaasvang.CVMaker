@@ -1,4 +1,4 @@
-namespace LagDinCv.Api.Models;
+namespace LagDinCv.Domain.Models;
 
 public class EducationModel
 {

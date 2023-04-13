@@ -1,4 +1,5 @@
 using LagDinCv.Api.Services;
+using LagDinCv.Domain.Requests;
 using Microsoft.Net.Http.Headers;
 
 namespace LagDinCv.Api.Apis;
@@ -14,18 +15,18 @@ internal static class ResumeApi
             opt.AllowAnyOrigin();
         });
 
-        group.MapPost("/create", async (TwentySecondModel model, IPdfBuilderService pdfBuilder) 
-            =>
-        {
-            var filePath = await pdfBuilder.CreateResume(model);
-            return Results.Created(filePath, new { });
-        }).RequireCors(opt =>
-        {
-            // TODO: be thorough with these setting
-            opt.AllowAnyOrigin();
-            opt.AllowAnyHeader();
-            opt.WithExposedHeaders(HeaderNames.Location);
-        });
+        // group.MapPost("/create", async (CreateCvRequest model, IPdfBuilderService pdfBuilder) 
+        //     =>
+        // {
+        //     var filePath = await pdfBuilder.CreateResume(model);
+        //     return Results.Created(filePath, new { });
+        // }).RequireCors(opt =>
+        // {
+        //     // TODO: be thorough with these setting
+        //     opt.AllowAnyOrigin();
+        //     opt.AllowAnyHeader();
+        //     opt.WithExposedHeaders(HeaderNames.Location);
+        // });
 
         group.MapGet("resume/{fileName}", (string fileName) 
             =>

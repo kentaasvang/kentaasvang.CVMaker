@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Api", "LagDinCv.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebGui", "LagDinCv.WebGui\LagDinCv.WebGui.csproj", "{0994120A-3C3C-4D02-BCD3-AFF27AA50F9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Domain", "LagDinCv.Domain\LagDinCv.Domain.csproj", "{92166433-4788-440F-8F24-57092C48ABB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{0994120A-3C3C-4D02-BCD3-AFF27AA50F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0994120A-3C3C-4D02-BCD3-AFF27AA50F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0994120A-3C3C-4D02-BCD3-AFF27AA50F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92166433-4788-440F-8F24-57092C48ABB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92166433-4788-440F-8F24-57092C48ABB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92166433-4788-440F-8F24-57092C48ABB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92166433-4788-440F-8F24-57092C48ABB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

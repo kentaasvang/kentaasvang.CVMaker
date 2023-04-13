@@ -4,7 +4,7 @@ using LagDinCv.Api.Apis;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Services
-builder.Services.AddPdfBuilder();
+// builder.Services.AddPdfBuilder();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

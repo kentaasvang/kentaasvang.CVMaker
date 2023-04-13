@@ -1,10 +1,11 @@
-using LagDinCv.Api.Models;
+using LagDinCv.Domain.Enums;
+using LagDinCv.Domain.Models;
 
-namespace LagDinCv.Api;
+namespace LagDinCv.Domain.Requests;
 
-public class TwentySecondModel : ITemplateModel
+public class CreateCvRequest
 {
-    public int Id { get; set; }
+    public CvTemplateType CvTemplateType { get; set; }
     public required string Name { get; set; }
     public List<ExperienceModel>? Experiences { get; set; }
     public List<EducationModel>? Educations { get; set; }

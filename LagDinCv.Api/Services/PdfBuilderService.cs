@@ -1,16 +1,14 @@
 using kentaasvang.PdfLatex;
 using kentaasvang.TemplatingEngine;
+using LagDinCv.Domain;
+using LagDinCv.Domain.Interfaces;
+using LagDinCv.Domain.Requests;
 
 namespace LagDinCv.Api.Services;
 
-public interface IPdfBuilderService
+public class PdfBuilder : IPdfBuilder
 {
-    Task<Uri> CreateResume(TwentySecondModel model);
-}
-
-public class PdfBuilderService : IPdfBuilderService
-{
-    public async Task<Uri> CreateResume(TwentySecondModel model)
+    public async Task<Uri> CreateResume(CreateCvRequest model)
     {
         var options = new PdfLatexSettings
         {
@@ -19,13 +17,11 @@ public class PdfBuilderService : IPdfBuilderService
             TempFilesDir = "Templates/TemporaryTemplates/"
         };
 
-        var fileName = new TwentySecondCv().Name();
-
-        var templateFile = Path.Combine(options.TemplateDir, fileName);
-        var document = await File.ReadAllTextAsync(templateFile);
-
+        var templateFileName = model.CvTemplateType.ToFileName();
+        var templateFilePath = Path.Combine(options.TemplateDir, templateFileName);
+        var document = await File.ReadAllTextAsync(templateFilePath);
+        
         var keyValues = model.ToDictionary();
-
         var template = TemplatingEngine.Replace(document, keyValues, true);
         var tempTemplateName = GetRandomFileNameWithExtension(FileExtension.Tex);
 
