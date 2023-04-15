@@ -14,11 +14,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resumes" />
-      <Folder Include="Templates\TemporaryTemplates" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\LagDinCv.Domain\LagDinCv.Domain.csproj" />
     </ItemGroup>
 

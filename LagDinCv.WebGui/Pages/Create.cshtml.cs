@@ -24,7 +24,7 @@ public class CreateModel : PageModel
     {
         
     }
-    things seems to be working now, but template folders and templates need to be in the correct locations to be found 
+    
     public async Task<IActionResult> OnPost(CreateCvRequest createCvRequest)
     {
         createCvRequest.CvTemplateType = CvTemplateType.TwentySecond;
