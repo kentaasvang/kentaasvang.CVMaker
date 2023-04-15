@@ -6,15 +6,15 @@
 
 <h1> Create CV </h1>
 
-<form class="row g-3" method="post">
+<form class="row g-3 col-md-6" method="post">
     
-    <div class="col-md-6">
-    
-        <label for="inputEmail4" class="form-label">Cv template type</label>
-    
-        <input type="number" class="form-control" id="inputEmail4" name="CvTemplateType">
-    
-    </div>
+    @* <div class="col-md-6"> *@
+    @* *@
+    @*     <label for="inputEmail4" class="form-label">Cv template type</label> *@
+    @* *@
+    @*     <input type="number" class="form-control" id="inputEmail4" name="CvTemplateType"> *@
+    @* *@
+    @* </div> *@
     
     <div class="col-md-6">
         
@@ -24,7 +24,7 @@
         
     </div>
     
-    <div class="col-12">
+    <div class="col-md-6">
         
         <label for="jobTitle" class="form-label">JobTitle</label>
         
@@ -32,7 +32,7 @@
         
     </div>
         
-    <div class="col-12">
+    <div class="col-md-6">
         
         <label for="dayOfBirth" class="form-label">DayOfBirth</label>
         
@@ -48,7 +48,7 @@
     
     </div>
     
-    <div class="col-md-4">
+    <div class="col-md-6">
     
         <label for="phoneNumber" class="form-label">PhoneNumber</label>
     
@@ -56,7 +56,7 @@
     
     </div>
     
-    <div class="col-md-2">
+    <div class="col-md-6">
     
         <label for="emailAddress" class="form-label">EmailAddress</label>
     
@@ -65,7 +65,7 @@
     </div>
     
     
-    <div class="col-md-2">
+    <div class="col-md-6">
     
         <label for="website" class="form-label">Website</label>
     
@@ -73,7 +73,7 @@
     
     </div>
     
-    <div class="col-md-2">
+    <div class="col-md-6">
     
         <label for="linkedIn" class="form-label">Linkedin</label>
     
@@ -81,23 +81,23 @@
     
     </div>
     
-    <div class="col-md-2">
+    <div class="col-md-12">
     
         <label for="about" class="form-label">About</label>
     
-        <input type="text" class="form-control" id="about" name="About">
+        <textarea name="About" class="form-control" id="about" rows="5"></textarea>
     
     </div>
     
-    <div class="col-md-2">
-    
-        <label for="skills" class="form-label">Skills</label>
-    
-        <input type="text" class="form-control" id="skills" name="Skills">
-    
-    </div>
+    @* <div class="col-md-2"> *@
+    @* *@
+    @*     <label for="skills" class="form-label">Skills</label> *@
+    @* *@
+    @*     <input type="text" class="form-control" id="skills" name="Skills"> *@
+    @* *@
+    @* </div> *@
         
-    <div class="col-12">
+    <div class="col-md-12">
         
         <button type="submit" class="btn btn-primary">Compile</button>
         

@@ -5,7 +5,6 @@ using LagDinCv.Application.Interfaces;
 using LagDinCv.Domain;
 using LagDinCv.Domain.Requests;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
 namespace LagDinCv.Infrastructure.Services;
 
