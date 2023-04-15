@@ -1,0 +1,106 @@
+@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create CV";
+}
+
+<h1> Create CV </h1>
+
+<form class="row g-3" method="post">
+    
+    <div class="col-md-6">
+    
+        <label for="inputEmail4" class="form-label">Cv template type</label>
+    
+        <input type="number" class="form-control" id="inputEmail4" name="CvTemplateType">
+    
+    </div>
+    
+    <div class="col-md-6">
+        
+        <label for="cvName" class="form-label">Name</label>
+        
+        <input type="text" class="form-control" id="cvName" name="Name">
+        
+    </div>
+    
+    <div class="col-12">
+        
+        <label for="jobTitle" class="form-label">JobTitle</label>
+        
+        <input type="text" class="form-control" id="jobTitle" placeholder="Software engineer" name="JobTitle">
+        
+    </div>
+        
+    <div class="col-12">
+        
+        <label for="dayOfBirth" class="form-label">DayOfBirth</label>
+        
+        <input type="date" class="form-control" id="dayOfBirth" name="DayOfBirth">
+        
+    </div>
+        
+    <div class="col-md-6">
+    
+        <label for="nationality" class="form-label">Nationality</label>
+    
+        <input type="text" class="form-control" id="nationality" name="Nationality">
+    
+    </div>
+    
+    <div class="col-md-4">
+    
+        <label for="phoneNumber" class="form-label">PhoneNumber</label>
+    
+        <input type="text" class="form-control" id="phoneNumber" name="PhoneNumber">
+    
+    </div>
+    
+    <div class="col-md-2">
+    
+        <label for="emailAddress" class="form-label">EmailAddress</label>
+    
+        <input type="email" class="form-control" id="emailAddress" name="EmailAddress">
+    
+    </div>
+    
+    
+    <div class="col-md-2">
+    
+        <label for="website" class="form-label">Website</label>
+    
+        <input type="url" class="form-control" id="website" name="Website">
+    
+    </div>
+    
+    <div class="col-md-2">
+    
+        <label for="linkedIn" class="form-label">Linkedin</label>
+    
+        <input type="url" class="form-control" id="linkedIn" name="Linkedin">
+    
+    </div>
+    
+    <div class="col-md-2">
+    
+        <label for="about" class="form-label">About</label>
+    
+        <input type="text" class="form-control" id="about" name="About">
+    
+    </div>
+    
+    <div class="col-md-2">
+    
+        <label for="skills" class="form-label">Skills</label>
+    
+        <input type="text" class="form-control" id="skills" name="Skills">
+    
+    </div>
+        
+    <div class="col-12">
+        
+        <button type="submit" class="btn btn-primary">Compile</button>
+        
+    </div>
+        
+</form>

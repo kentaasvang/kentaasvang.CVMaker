@@ -1,10 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Api", "LagDinCv.Api\LagDinCv.Api.csproj", "{DEBEF2E8-D273-4B50-940C-3373256851EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinvCv.Application", "LagDinvCv.Application\LagDinvCv.Application.csproj", "{DEBEF2E8-D273-4B50-940C-3373256851EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebGui", "LagDinCv.WebGui\LagDinCv.WebGui.csproj", "{0994120A-3C3C-4D02-BCD3-AFF27AA50F9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebUI", "LagDinCv.WebUI\LagDinCv.WebUI.csproj", "{0994120A-3C3C-4D02-BCD3-AFF27AA50F9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Domain", "LagDinCv.Domain\LagDinCv.Domain.csproj", "{92166433-4788-440F-8F24-57092C48ABB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Infrastructure", "LagDinCv.Infrastructure\LagDinCv.Infrastructure.csproj", "{4841A6FA-DD6C-4572-B835-50DE14C92EAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{92166433-4788-440F-8F24-57092C48ABB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92166433-4788-440F-8F24-57092C48ABB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92166433-4788-440F-8F24-57092C48ABB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4841A6FA-DD6C-4572-B835-50DE14C92EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4841A6FA-DD6C-4572-B835-50DE14C92EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4841A6FA-DD6C-4572-B835-50DE14C92EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4841A6FA-DD6C-4572-B835-50DE14C92EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
