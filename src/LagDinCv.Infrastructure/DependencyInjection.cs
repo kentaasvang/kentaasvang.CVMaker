@@ -11,12 +11,14 @@ public static class DependencyInjection
 {
     public static void AddInfrastructure(this IServiceCollection services, string connectionString)
     {
+        var serverVersion = ServerVersion.AutoDetect(connectionString);
+        
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlite(connectionString));
+            options.UseMySql(connectionString, serverVersion));
 
         services.AddDatabaseDeveloperPageExceptionFilter();
 
-        services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        services.AddDefaultIdentity<IdentityUser>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
         services.AddTransient<IFileWriter, FileWriter>();
