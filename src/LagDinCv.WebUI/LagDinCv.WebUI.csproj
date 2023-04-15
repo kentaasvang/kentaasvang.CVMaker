@@ -13,7 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\LagDinCv.Infrastructure\LagDinCv.Infrastructure.csproj" />
-      <ProjectReference Include="..\LagDinvCv.Application\LagDinvCv.Application.csproj" />
+      <ProjectReference Include="..\LagDinCv.Application\LagDinCv.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>

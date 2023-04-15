@@ -1,6 +1,6 @@
 using LagDinCv.Domain.Requests;
 
-namespace LagDinCv.Domain.Interfaces;
+namespace LagDinCv.Application.Interfaces;
 
 public interface IPdfBuilder
 {

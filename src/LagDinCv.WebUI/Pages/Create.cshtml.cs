@@ -1,8 +1,7 @@
 using System.Net.NetworkInformation;
-using LagDinvCv.Application.Services;
 using LagDinCv.Domain.Enums;
-using LagDinCv.Domain.Interfaces;
 using LagDinCv.Domain.Requests;
+using LagDinCv.Application.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

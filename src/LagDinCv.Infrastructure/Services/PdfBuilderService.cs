@@ -1,48 +1,53 @@
 using kentaasvang.PdfLatex;
 using kentaasvang.TemplatingEngine;
+using LagDinCv.Application;
+using LagDinCv.Application.Interfaces;
 using LagDinCv.Domain;
-using LagDinCv.Domain.Interfaces;
 using LagDinCv.Domain.Requests;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
-namespace LagDinvCv.Application.Services;
+namespace LagDinCv.Infrastructure.Services;
 
 public class PdfBuilder : IPdfBuilder
 {
+    private readonly IFileWriter _fileWriter;
+    private readonly PdfLatexOptions _options;
+
+    public PdfBuilder(IFileWriter fileWriter, IConfiguration configuration)
+    {
+        _fileWriter = fileWriter;
+        _options = configuration.GetSection(PdfLatexOptions.PdfLatex).Get<PdfLatexOptions>() 
+                   ?? throw new NullReferenceException("PdfLatexOptions can't be null");
+    }
+    
     public async Task<Uri> CreateResume(CreateCvRequest model)
     {
-        var options = new PdfLatexSettings
-        {
-            OutputDir = "Resumes",
-            TemplateDir = "Templates/",
-            TempFilesDir = "Templates/TemporaryTemplates/"
-        };
-
         var templateFileName = model.CvTemplateType.ToFileName();
-        var templateFilePath = Path.Combine(options.TemplateDir, templateFileName);
+        var templateFilePath = Path.Combine(_options.TemplateDir, templateFileName);
         var document = await File.ReadAllTextAsync(templateFilePath);
         
         var keyValues = model.ToDictionary();
         var template = TemplatingEngine.Replace(document, keyValues, true);
         var tempTemplateName = GetRandomFileNameWithExtension(FileExtension.Tex);
-
-        await File.WriteAllTextAsync(
-            Path.Combine(options.TempFilesDir, tempTemplateName), template
-        );
+        
+        var dirPath = Path.Combine(_options.TempFilesDir, tempTemplateName);
+        var filePath = await _fileWriter.WriteContentToFileAsync(template, dirPath);
 
         PdfLatexBuilder pdfLatexBuilder = new();
         GetRandomFileNameWithExtension(FileExtension.Pdf);
 
         pdfLatexBuilder
-            .OutputDirectory(options.OutputDir)
-            .File(Path.Combine(options.TempFilesDir, tempTemplateName))
+            .OutputDirectory(_options.OutputDir)
+            .File(filePath)
             .EnableInstaller()
-            .IncludeDirectory(options.TemplateDir)
+            .IncludeDirectory(_options.TemplateDir)
             .NonStopMode();
 
         await pdfLatexBuilder.Run();
 
-        var filePath = new Uri($"/{Path.GetFileNameWithoutExtension(tempTemplateName)}.pdf", UriKind.Relative);
-        return filePath;
+        var urlPath = new Uri($"/{Path.GetFileNameWithoutExtension(tempTemplateName)}.pdf", UriKind.Relative);
+        return urlPath;
     }
     
     private string GetRandomFileNameWithExtension(FileExtension extension)

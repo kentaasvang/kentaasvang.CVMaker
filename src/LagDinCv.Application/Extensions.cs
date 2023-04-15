@@ -1,7 +1,7 @@
 using LagDinCv.Domain.Constants;
 using LagDinCv.Domain.Enums;
 
-namespace LagDinCv.Domain;
+namespace LagDinCv.Application;
 
 public static class Extensions
 {

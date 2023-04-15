@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Domain", "src\LagD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Infrastructure", "src\LagDinCv.Infrastructure\LagDinCv.Infrastructure.csproj", "{E1681B0D-29B0-475D-9269-8E4D1B32EF92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinvCv.Application", "src\LagDinvCv.Application\LagDinvCv.Application.csproj", "{C795CE1A-95C9-4E45-A067-B3E2DDC1AAD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Application", "src\LagDinCv.Application\LagDinCv.Application.csproj", "{C795CE1A-95C9-4E45-A067-B3E2DDC1AAD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebUI", "src\LagDinCv.WebUI\LagDinCv.WebUI.csproj", "{42919624-A282-479D-BA12-B35425514A66}"
 EndProject

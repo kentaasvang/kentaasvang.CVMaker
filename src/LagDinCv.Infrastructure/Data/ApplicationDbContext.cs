@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using LagDinCv.Application.Interfaces;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LagDinCv.Infrastructure.Data;
 
-internal class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext, IApplicationDbContext
 {
-    internal ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }

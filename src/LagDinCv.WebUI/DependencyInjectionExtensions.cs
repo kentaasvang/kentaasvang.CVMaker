@@ -1,5 +1,5 @@
-using LagDinvCv.Application.Services;
-using LagDinCv.Domain.Interfaces;
+using LagDinCv.Application.Interfaces;
+using LagDinCv.Infrastructure.Services;
 
 namespace LagDinCv.WebUI;
 
