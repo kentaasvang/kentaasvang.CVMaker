@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{01A0D2B3
 		README.md = README.md
 		docker-compose.yml = docker-compose.yml
 		ef_migration_add.sh = ef_migration_add.sh
+		ef_database_update.sh = ef_database_update.sh
 	EndProjectSection
 EndProject
 Global
