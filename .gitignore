@@ -10,8 +10,8 @@
 *.userosscache
 *.sln.docstates
 .idea/
-LagDinCv.Api/Resumes/**
-LagDinCv.Api/Templates/TemporaryTemplates/**
+src/LagDinCv.WebUI/Resumes/**
+src/LagDinCv.WebUI/Templates/TemporaryTemplates/**
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
