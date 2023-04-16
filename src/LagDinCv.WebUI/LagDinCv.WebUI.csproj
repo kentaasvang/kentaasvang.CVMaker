@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\LagDinCv.Infrastructure\LagDinCv.Infrastructure.csproj" />
       <ProjectReference Include="..\LagDinCv.Application\LagDinCv.Application.csproj" />
     </ItemGroup>

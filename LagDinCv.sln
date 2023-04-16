@@ -10,6 +10,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Application", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebUI", "src\LagDinCv.WebUI\LagDinCv.WebUI.csproj", "{42919624-A282-479D-BA12-B35425514A66}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{01A0D2B3-45EB-4FBE-B5C4-948020D8EEFC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		docker-compose.yml = docker-compose.yml
+		ef_migration_add.sh = ef_migration_add.sh
+		ef_database_update.sh = ef_database_update.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
