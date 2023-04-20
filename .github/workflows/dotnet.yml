@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet publish --configuration Release --runtime "linux-x64" --self-contained -p:PublishSingleFile=true .\src\LagDinCv.WebUI\LagDinCv.WebUI.csproj -o .\dist\
+      run: dotnet publish --configuration Release --runtime "linux-x64" --self-contained -p:PublishSingleFile=true ./src/LagDinCv.WebUI/LagDinCv.WebUI.csproj -o ./dist/
 #    - name: Deploy
       
 #    - name: Test
