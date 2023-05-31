@@ -10,12 +10,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Application", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebUI", "src\LagDinCv.WebUI\LagDinCv.WebUI.csproj", "{42919624-A282-479D-BA12-B35425514A66}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{01A0D2B3-45EB-4FBE-B5C4-948020D8EEFC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{01A0D2B3-45EB-4FBE-B5C4-948020D8EEFC}"
+	ProjectSection(SolutionItems) = preProject
+		addMigration.sh = addMigration.sh
+		updateDatabase.sh = updateDatabase.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{088FD753-9F5F-4CC8-9B77-B92A4B17D98D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{E8E70394-437D-4D78-A37F-219CBE4372A2}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		docker-compose.yml = docker-compose.yml
-		ef_migration_add.sh = ef_migration_add.sh
-		ef_database_update.sh = ef_database_update.sh
 	EndProjectSection
 EndProject
 Global
