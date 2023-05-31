@@ -13,9 +13,9 @@ public class DesignTimeApplicationContextFactory : IDesignTimeDbContextFactory<A
 {
     public ApplicationDbContext CreateDbContext(string[] args)
     {
-        var optionsBuilder   = new DbContextOptionsBuilder<ApplicationDbContext>();
+        var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
         var connectionString = GetConnectionString();
-        var version          = ServerVersion.AutoDetect(connectionString);
+        var version = ServerVersion.AutoDetect(connectionString);
         optionsBuilder.UseMySql(connectionString, version);
 
         return new ApplicationDbContext(optionsBuilder.Options);
@@ -23,11 +23,11 @@ public class DesignTimeApplicationContextFactory : IDesignTimeDbContextFactory<A
 
     private static string GetConnectionString()
     {
-        var filePath          = $"{Directory.GetCurrentDirectory()}../../LagDinCv.WebUI/appsettings.Development.json";
-        var fileContent       = File.ReadAllText(filePath);
+        var filePath = $"{Directory.GetCurrentDirectory()}../../LagDinCv.WebUI/appsettings.Development.json";
+        var fileContent = File.ReadAllText(filePath);
         var connectionStrings = JsonSerializer.Deserialize<AppSettings>(fileContent)
                                 ?? throw new NullReferenceException("connectionString can't be null");
-        
+
         return connectionStrings.ConnectionStrings.DefaultConnection;
     }
 }
