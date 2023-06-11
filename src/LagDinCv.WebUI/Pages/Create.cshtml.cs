@@ -1,17 +1,17 @@
-using System.Net.NetworkInformation;
 using LagDinCv.Domain.Enums;
 using LagDinCv.Domain.Requests;
 using LagDinCv.Application.Interfaces;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace LagDinCv.WebUI.Pages;
 
+[Authorize]
 public class CreateModel : PageModel
 {
     private readonly ILogger<CreateModel> _logger;
     private readonly IPdfBuilder _pdfBuilder;
+    public Uri? CvFilePath;
 
     public CreateModel(ILogger<CreateModel> logger, IPdfBuilder pdfBuilder)
     {
@@ -24,10 +24,12 @@ public class CreateModel : PageModel
         
     }
     
-    public async Task<IActionResult> OnPost(CreateCvRequest createCvRequest)
+    // TODO: add CV to Db on correct User
+    public async Task OnPost(CreateCvRequest createCvRequest)
     {
         createCvRequest.CvTemplateType = CvTemplateType.TwentySecond;
+        // TODO: Add error-handling
         var filePath = await _pdfBuilder.CreateResume(createCvRequest);
-        return new CreatedResult(filePath, new { });
+        CvFilePath = filePath;
     }
 }

@@ -6,6 +6,11 @@
 
 <h1> Create CV </h1>
 
+@if (Model.CvFilePath is not null)
+{
+    <a asp-page="Preview" asp-route-previewpath="@Model.CvFilePath"> Cv Preview </a>
+}
+
 <form class="row g-3 col-md-6" method="post">
     
     @* <div class="col-md-6"> *@
