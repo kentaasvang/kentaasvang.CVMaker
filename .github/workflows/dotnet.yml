@@ -22,14 +22,14 @@ jobs:
     - name: Build
       run: dotnet publish --configuration Release --runtime "linux-x64" --self-contained -p:PublishSingleFile=true ./src/LagDinCv.WebUI/LagDinCv.WebUI.csproj -o ./dist/
       
-#    - name: Deploy
-#      uses: kentaasvang/scp_deploy@v0.8.2b
-#      with:
-#        host: 64.226.126.68
-#        user: kent
-#        private_key: ${{ secrets.SSH_LAGDINCV_DEMO_PUBLIC_KEY }}
-#        source_folder: ./dist/
-#        destination_folder: /home/kent/published/
+    - name: Deploy
+      uses: kentaasvang/scp_deploy@v0.8.2b
+      with:
+        host: 64.226.126.68
+        user: kent
+        private_key: ${{ secrets.SSH_LAGDINCV_DEMO_PUBLIC_KEY }}
+        source_folder: ./dist/
+        destination_folder: /home/kent/published/
 
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
