@@ -30,6 +30,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 // adds Resume-folder to path so it can be displayed frontend 
+// TODO: currently this location is not configured in Nginx's server-block, needs to be set wrong env-settings
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider( Path.Combine(Directory.GetCurrentDirectory(), "Resumes")), 
