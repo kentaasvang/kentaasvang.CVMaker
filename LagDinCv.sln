@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{01A0
 	ProjectSection(SolutionItems) = preProject
 		addMigration.sh = addMigration.sh
 		updateDatabase.sh = updateDatabase.sh
+		updateDatabase.ps1 = updateDatabase.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{088FD753-9F5F-4CC8-9B77-B92A4B17D98D}"
