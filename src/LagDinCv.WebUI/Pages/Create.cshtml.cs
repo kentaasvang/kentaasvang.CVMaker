@@ -24,10 +24,12 @@ public class CreateModel : PageModel
         
     }
     
-    public async Task<IActionResult> OnPost(CreateCvRequest createCvRequest)
+    // public async Task<IActionResult> OnPost(CreateCvRequest createCvRequest)
+    public async Task OnPost(CreateCvRequest createCvRequest)
     {
         createCvRequest.CvTemplateType = CvTemplateType.TwentySecond;
         var filePath = await _pdfBuilder.CreateResume(createCvRequest);
-        return new CreatedResult(filePath, new { });
+         
+        // return new CreatedResult(filePath, new { });
     }
 }
