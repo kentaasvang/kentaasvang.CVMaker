@@ -1,5 +1,6 @@
 using LagDinCv.Infrastructure;
 using LagDinCv.WebUI;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,13 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+// adds Resume-folder to path so it can be displayed frontend 
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider( Path.Combine(Directory.GetCurrentDirectory(), "Resumes")), 
+    RequestPath = "/Resumes" 
+});
 
 app.UseRouting();
 

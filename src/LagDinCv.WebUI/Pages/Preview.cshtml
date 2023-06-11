@@ -1,0 +1,25 @@
+@page
+@model PreviewModel
+@{
+    ViewData["Title"] = "Preview";
+}
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (Model.PreviewPath is not null)
+    {
+        <h1> preview cv here</h1>
+        <embed src="/Resumes/@Model.PreviewPath" alt="" width="1000"/>
+    }
+    else
+    {
+        <h1> Preview path is null. </h1>
+    }
+}
+else
+{
+    <h1> Not authorized. </h1>
+}
