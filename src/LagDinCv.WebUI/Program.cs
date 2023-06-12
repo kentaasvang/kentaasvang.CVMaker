@@ -1,6 +1,11 @@
+using LagDinCv.Domain;
 using LagDinCv.Infrastructure;
 using LagDinCv.WebUI;
 using Microsoft.Extensions.FileProviders;
+
+#warning "Automatic deployment pipeline using github-action and Kma.ServerWorker is broken, must be done manually"
+
+// TODO: remove appsettings.json and use .env instead, preferably dotnet-secret
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,10 +35,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 // adds Resume-folder to path so it can be displayed frontend 
+var pdfLatexOptions =
+    app.Services.GetService<IConfiguration>()?.GetSection(PdfLatexOptions.PdfLatex).Get<PdfLatexOptions>()
+    ?? throw new NullReferenceException("Can't be null");
+
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider( Path.Combine(Directory.GetCurrentDirectory(), "Resumes")), 
-    RequestPath = "/Resumes" 
+    FileProvider = new PhysicalFileProvider(pdfLatexOptions.OutputDir),
+    RequestPath = "/Resumes"
 });
 
 app.UseRouting();

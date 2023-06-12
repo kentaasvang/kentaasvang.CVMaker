@@ -4,10 +4,13 @@ namespace LagDinCv.WebUI.Pages;
 
 public class PreviewModel : PageModel
 {
-    public Uri? PreviewPath;
+    public string? PreviewPath;
     
     public void OnGet(Uri? previewPath)
     {
-        PreviewPath = previewPath;
+        if (previewPath is null)
+            return;
+        
+        PreviewPath = Path.Combine("Resumes", previewPath.ToString()[1..]);
     }
 }
