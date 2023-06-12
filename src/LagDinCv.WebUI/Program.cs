@@ -1,3 +1,4 @@
+using LagDinCv.Domain;
 using LagDinCv.Infrastructure;
 using LagDinCv.WebUI;
 using Microsoft.Extensions.FileProviders;
@@ -30,11 +31,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 // adds Resume-folder to path so it can be displayed frontend 
-// TODO: currently this location is not configured in Nginx's server-block, needs to be set wrong env-settings
+var pdfLatexOptions =
+    app.Services.GetService<IConfiguration>()?.GetSection(PdfLatexOptions.PdfLatex).Get<PdfLatexOptions>()
+    ?? throw new NullReferenceException("Can't be null");
+
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider( Path.Combine(Directory.GetCurrentDirectory(), "Resumes")), 
-    RequestPath = "/Resumes" 
+    FileProvider = new PhysicalFileProvider(pdfLatexOptions.OutputDir),
+    RequestPath = "/Resumes"
 });
 
 app.UseRouting();
