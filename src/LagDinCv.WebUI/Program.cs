@@ -3,10 +3,6 @@ using LagDinCv.Infrastructure;
 using LagDinCv.WebUI;
 using Microsoft.Extensions.FileProviders;
 
-#warning "Automatic deployment pipeline using github-action and Kma.ServerWorker is broken, must be done manually"
-
-// TODO: remove appsettings.json and use .env instead, preferably dotnet-secret
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
