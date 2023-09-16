@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - kentaasvang.CVMaker</title>
+</head>
+<body>
+<header>
+    @* <partial name="_LoginPartial"/> *@
+    <nav>
+        <ul>
+            <li>
+                <a asp-page="/Index">Home</a>
+            </li>
+            @* TODO: this should only be visible when logged in *@
+            <li>
+                <a asp-page="/Profile/MyProfile">My Page</a>
+            </li>
+            <li>
+                <a asp-page="/Resume/CreateResume">New resume</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+</body>
+</html>

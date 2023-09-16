@@ -1,0 +1,111 @@
+@page "resume/create"
+@model CreateResumePageModel
+@{
+    ViewData["Title"] = "Create CV";
+}
+
+<h1> Create CV </h1>
+
+@if (Model.CvFilePath is not null)
+{
+    <embed src="~/Resumes/@Model.CvFilePath" alt="" width="1000" height="1000"/>
+}
+
+<form method="post">
+
+    @* <div class="col-md-6"> *@
+    @* *@
+    @*     <label for="inputEmail4" class="form-label">Cv template type</label> *@
+    @* *@
+    @*     <input type="number" class="form-control" id="inputEmail4" name="CvTemplateType"> *@
+    @* *@
+    @* </div> *@
+
+    <div>
+
+        <label for="cvName">Name</label>
+
+        <input type="text" id="cvName" name="Name">
+
+    </div>
+
+    <div>
+
+        <label for="jobTitle">JobTitle</label>
+
+        <input type="text" id="jobTitle" placeholder="Software engineer" name="JobTitle">
+
+    </div>
+
+    <div>
+
+        <label for="dayOfBirth">DayOfBirth</label>
+
+        <input type="date" id="dayOfBirth" name="DayOfBirth">
+
+    </div>
+
+    <div>
+
+        <label for="nationality">Nationality</label>
+
+        <input type="text" id="nationality" name="Nationality">
+
+    </div>
+
+    <div>
+
+        <label for="phoneNumber">PhoneNumber</label>
+
+        <input type="text" id="phoneNumber" name="PhoneNumber">
+
+    </div>
+
+    <div>
+
+        <label for="emailAddress">EmailAddress</label>
+
+        <input type="email" id="emailAddress" name="EmailAddress">
+
+    </div>
+
+
+    <div>
+
+        <label for="website">Website</label>
+
+        <input type="url" id="website" name="Website">
+
+    </div>
+
+    <div>
+
+        <label for="linkedIn">Linkedin</label>
+
+        <input type="url" id="linkedIn" name="Linkedin">
+
+    </div>
+
+    <div>
+
+        <label for="about">About</label>
+
+        <textarea name="About" id="about" rows="5"></textarea>
+
+    </div>
+
+    @* <div class="col-md-2"> *@
+    @* *@
+    @*     <label for="skills" class="form-label">Skills</label> *@
+    @* *@
+    @*     <input type="text" class="form-control" id="skills" name="Skills"> *@
+    @* *@
+    @* </div> *@
+
+    <div>
+
+        <button type="submit">Compile</button>
+
+    </div>
+
+</form>
