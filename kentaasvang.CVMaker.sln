@@ -25,10 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kentaasvang.CVMaker", "kentaasvang.CVMaker\kentaasvang.CVMaker.csproj", "{0AE1DD31-0F9D-4D0C-BA6A-0ECC75E2B878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Application", "LagDinCv.Application\LagDinCv.Application.csproj", "{A6BD88D5-9219-4976-AD6B-13F4F5460130}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Domain", "LagDinCv.Domain\LagDinCv.Domain.csproj", "{E7ED383F-BA67-4688-8E02-90E2AA503704}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,14 +35,6 @@ Global
 		{0AE1DD31-0F9D-4D0C-BA6A-0ECC75E2B878}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AE1DD31-0F9D-4D0C-BA6A-0ECC75E2B878}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AE1DD31-0F9D-4D0C-BA6A-0ECC75E2B878}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6BD88D5-9219-4976-AD6B-13F4F5460130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6BD88D5-9219-4976-AD6B-13F4F5460130}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6BD88D5-9219-4976-AD6B-13F4F5460130}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6BD88D5-9219-4976-AD6B-13F4F5460130}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7ED383F-BA67-4688-8E02-90E2AA503704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7ED383F-BA67-4688-8E02-90E2AA503704}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7ED383F-BA67-4688-8E02-90E2AA503704}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7ED383F-BA67-4688-8E02-90E2AA503704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
