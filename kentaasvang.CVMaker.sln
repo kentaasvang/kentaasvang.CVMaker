@@ -8,13 +8,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.Application", "src\LagDinCv.Application\LagDinCv.Application.csproj", "{C795CE1A-95C9-4E45-A067-B3E2DDC1AAD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagDinCv.WebUI", "src\LagDinCv.WebUI\LagDinCv.WebUI.csproj", "{42919624-A282-479D-BA12-B35425514A66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kentaasvang.CVMaker", "src\kentaasvang.CVMaker\kentaasvang.CVMaker.csproj", "{42919624-A282-479D-BA12-B35425514A66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{01A0D2B3-45EB-4FBE-B5C4-948020D8EEFC}"
 	ProjectSection(SolutionItems) = preProject
 		addMigration.sh = addMigration.sh
 		updateDatabase.sh = updateDatabase.sh
-		updateDatabase.ps1 = updateDatabase.ps1
+		UpdateDatabase.ps1 = UpdateDatabase.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{088FD753-9F5F-4CC8-9B77-B92A4B17D98D}"
@@ -25,6 +25,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{E8E70394-437D-4D78-A37F-219CBE4372A2}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		TODO.md = TODO.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{8C995592-CAB4-4825-9846-3DF2EE776B13}"
@@ -56,9 +57,5 @@ Global
 		{42919624-A282-479D-BA12-B35425514A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{36177C7C-6CC8-4506-96EC-3A417B91A010} = {01CC118F-0FF5-431A-B7A5-A49690B8AA20}
-		{E1681B0D-29B0-475D-9269-8E4D1B32EF92} = {01CC118F-0FF5-431A-B7A5-A49690B8AA20}
-		{C795CE1A-95C9-4E45-A067-B3E2DDC1AAD4} = {01CC118F-0FF5-431A-B7A5-A49690B8AA20}
-		{42919624-A282-479D-BA12-B35425514A66} = {01CC118F-0FF5-431A-B7A5-A49690B8AA20}
 	EndGlobalSection
 EndGlobal

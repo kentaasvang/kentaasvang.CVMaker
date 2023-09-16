@@ -1,11 +1,12 @@
 ﻿@page
+@using LagDinCv.Domain
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<UserEntity> SignInManager
+@inject UserManager<UserEntity> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
