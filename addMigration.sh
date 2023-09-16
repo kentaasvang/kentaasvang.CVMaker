@@ -6,5 +6,5 @@ then
   echo "./ef_migration_add.sh <NAME>"
 else
   echo "Adding new migration '${NAME}'"
-  dotnet ef migrations add Initial --project src/LagDinCv.Infrastructure/ -o Data/Migrations
+  dotnet ef migrations add $NAME --project src/LagDinCv.Infrastructure/ -o Data/Migrations
 fi
