@@ -1,15 +1,11 @@
-# cat docker-compose.yml
 version: "3.3"
 services:
-  ### MySQL Container
   database:
-    image: "mysql:5.7"
+    image: "mysql:8.1.0"
+    container_name: "dev_db_mysql"
     environment:
+      MYSQL_ROOT_USER: "root"
       MYSQL_DATABASE: "db"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "password"
       MYSQL_ROOT_PASSWORD: "password" 
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
