@@ -56,15 +56,58 @@
 
 @Raw("\\documentclass[letterpaper]{twentysecondcv}") @* % a4paper for A4 *@
 
-\profilepic{image.png} % Profile picture
-\cvjobtitle{Job Description and Career} % Job title/career
-\cvname{Name Surname} % Your name
+@*\profilepic{image.png} % Profile picture *@
 
-%% Mandatory informations used by \makeinfoprofile. To hide these fields leave the contents of the macro empty (e.g. '\cvsitepersonal{}' instead than '\cvsitepersonal{en.wikipedia.org}')
-%% See https://tex.stackexchange.com/a/692525/109031
-\cvbirthdate{15 August 1980}
-\cvnumberphone{+01 2345678901}
-\cvaddress{Address, Nation}        % Short address/location, use \newline if more than 1 line is required
+@if (Model.Name != null)
+{
+    @Raw($"\\cvname{{{Model.Name}}}")
+}
+else
+{
+    @Raw($"\\cvname{{}}")
+}
+
+@if (Model.JobTitle != null)
+{
+    @Raw($"\\cvjobtitle{{{Model.JobTitle}}}")
+}
+else
+{
+    @Raw($"\\cvjobtitle{{}}")
+}
+
+@*
+    %% Mandatory informations used by \makeinfoprofile. To hide these fields leave the contents of the macro empty (e.g. '\cvsitepersonal{}' instead than '\cvsitepersonal{en.wikipedia.org}')
+    %% See https://tex.stackexchange.com/a/692525/109031
+*@
+
+@if (Model.DateOfBirth != null)
+{
+    @Raw($"\\cvbirthdate{{{Model.DateOfBirth.ToString("d MMMM yyyy")}}}")
+}
+else
+{
+   @Raw("\\cvbirthdate{}")
+}
+
+@if (Model.PhoneNumber != null)
+{
+    @Raw($"\\cvnumberphone{{{Model.PhoneNumber}}}")
+}
+else
+{
+    @Raw("\\cvnumberphone{}")
+}
+
+@if (Model.Address != null)
+{
+    @Raw($"\\cvaddress{{{Model.Address}}}")
+}
+else
+{
+    @Raw("\\cvaddress{}")
+}
+
 \cvsitepersonal{example.com}       % personal site
 \cvstackoverflow{9999999999876}
 \cvlinkedin{name-surname-linkedin}
@@ -74,8 +117,8 @@
 
 \begin{document}
 \sidesection{
-    \makeheaderprofile
-    %\makeheaderprofilenoimg
+    @* \makeheaderprofile *@
+    \makeheaderprofilenoimg
     \makeinfoprofile
     \aboutme{Short section about myself.}
     \customsidesection{Header profile section}{It's possible to hide the profile picture using \textbackslash\texttt{makeheaderprofilenoimg} instead than \textbackslash\texttt{makeheaderprofilenoimg} and then \textbackslash\texttt{profilepic\{image.png\}} can be removed.}

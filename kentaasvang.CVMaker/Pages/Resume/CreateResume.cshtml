@@ -12,10 +12,32 @@
 }
 
 <form method="post"%>
-    <label asp-for="Form!.Name" class="control-label"></label>
-    <input asp-for="Form!.Name" class="form-control"/>
-    <span asp-validation-for="Form!.Name" class="text-danger"></span>
     
+    <fieldset>
+        <label asp-for="Form!.Name" class="control-label"></label>
+        <input asp-for="Form!.Name" class="form-control"/>
+        <span asp-validation-for="Form!.Name" class="text-danger"></span>
+
+        <label asp-for="Form!.DateOfBirth" class="control-label"></label>
+        <input asp-for="Form!.DateOfBirth" class="form-control"/>
+        <span asp-validation-for="Form!.DateOfBirth" class="text-danger"></span>
+
+        <label asp-for="Form!.JobTitle" class="control-label"></label>
+        <input asp-for="Form!.JobTitle" class="form-control"/>
+        <span asp-validation-for="Form!.JobTitle" class="text-danger"></span>
+    </fieldset>
+    
+    <fieldset>
+        
+        <label asp-for="Form!.PhoneNumber" class="control-label"></label>
+        <input asp-for="Form!.PhoneNumber" class="form-control"/>
+        <span asp-validation-for="Form!.PhoneNumber" class="text-danger"></span>
+        
+        <label asp-for="Form!.Address" class="control-label"></label>
+        <input asp-for="Form!.Address" class="form-control"/>
+        <span asp-validation-for="Form!.Address" class="text-danger"></span>
+        
+    </fieldset>
     <button type="submit">Create</button>
 </form>
 
