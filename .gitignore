@@ -10,8 +10,9 @@
 *.userosscache
 *.sln.docstates
 .idea/
-src/LagDinCv.WebUI/Resumes/**
-src/LagDinCv.WebUI/Templates/TemporaryTemplates/**
+kentaasvang.CVMaker/Resumes/**
+kentaasvang.CVMaker/Templates/TemporaryTemplates/**
+image.png
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)

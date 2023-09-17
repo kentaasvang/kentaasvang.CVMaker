@@ -26,15 +26,10 @@ public class PdfManager
         
         var templatePath = Path.Combine(_options.TemplateDir, form.TwentySecond);
         var template = await File.ReadAllTextAsync(templatePath);
-        
         var tempTemplateName = GetRandomFileNameWithExtension(FileExtension.Tex);
-        
         var dirPath = Path.Combine(_options.TempFilesDir, tempTemplateName);
-        
         var result = await engine.CompileRenderStringAsync("key", template, form);
-
         var pdfLatexBuilder = new PdfLatexBuilder();
-        
         var filePath = await _fileWriter.WriteContentToFileAsync(result, dirPath);
         
         pdfLatexBuilder
@@ -50,36 +45,6 @@ public class PdfManager
         
         return urlPath.ToString().Substring(1);
     }
-
-    // [Obsolete("Use CreateAsync instead")]
-    // public async Task<Uri> CreateResume(CreateCvRequest model)
-    // {
-    //     var templateFileName = model.CvTemplateType.ToFileName();
-    //     var templateFilePath = Path.Combine(_options.TemplateDir, templateFileName);
-    //     var document = await File.ReadAllTextAsync(templateFilePath);
-    //
-    //     var keyValues = model.ToDictionary();
-    //     var template = TemplatingEngine.TemplatingEngine.Replace(document, keyValues, true);
-    //     var tempTemplateName = GetRandomFileNameWithExtension(FileExtension.Tex);
-    //
-    //     var dirPath = Path.Combine(_options.TempFilesDir, tempTemplateName);
-    //     var filePath = await _fileWriter.WriteContentToFileAsync(template, dirPath);
-    //
-    //     PdfLatexBuilder pdfLatexBuilder = new();
-    //     GetRandomFileNameWithExtension(FileExtension.Pdf);
-    //
-    //     pdfLatexBuilder
-    //         .OutputDirectory(_options.OutputDir)
-    //         .File(filePath)
-    //         .EnableInstaller()
-    //         .IncludeDirectory(_options.TemplateDir)
-    //         .NonStopMode();
-    //
-    //     await pdfLatexBuilder.Run();
-    //
-    //     var urlPath = new Uri($"/{Path.GetFileNameWithoutExtension(tempTemplateName)}.pdf", UriKind.Relative);
-    //     return urlPath;
-    // }
 
     private string GetRandomFileNameWithExtension(FileExtension extension)
     {

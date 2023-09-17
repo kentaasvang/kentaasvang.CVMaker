@@ -54,7 +54,7 @@
     %----------------------------------------------------------------------------------------
 *@
 
-\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+@Raw("\\documentclass[letterpaper]{twentysecondcv}") @* % a4paper for A4 *@
 
 \profilepic{image.png} % Profile picture
 \cvjobtitle{Job Description and Career} % Job title/career
@@ -75,7 +75,7 @@
 \begin{document}
 \sidesection{
     \makeheaderprofile
-    % \makeheaderprofilenoimg
+    %\makeheaderprofilenoimg
     \makeinfoprofile
     \aboutme{Short section about myself.}
     \customsidesection{Header profile section}{It's possible to hide the profile picture using \textbackslash\texttt{makeheaderprofilenoimg} instead than \textbackslash\texttt{makeheaderprofilenoimg} and then \textbackslash\texttt{profilepic\{image.png\}} can be removed.}
