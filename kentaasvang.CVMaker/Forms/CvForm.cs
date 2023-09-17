@@ -20,4 +20,10 @@ public class CvForm
     
     [DataType(DataType.Text)]
     public string? Address { get; set; }
+    
+    [DataType(DataType.EmailAddress)]
+    public string? Email { get; set; }
+    
+    [DataType(DataType.Url)]
+    public string? LinkedIn { get; set; }
 }

@@ -108,22 +108,42 @@ else
     @Raw("\\cvaddress{}")
 }
 
-\cvsitepersonal{example.com}       % personal site
-\cvstackoverflow{9999999999876}
-\cvlinkedin{name-surname-linkedin}
-\cvskypeurl{name-surname-skype}
-\cvgithub{name-surname-github}     
-\cvmail{name@surname.com}
+\cvsitepersonal{not implemented}
+\cvstackoverflow{not implemented}
+
+@if (Model.Email != null)
+{
+    @Raw($"\\cvmail{{{Model.Email}}}")
+}
+else
+{
+    @Raw("\\cvmail{}")
+}
+
+\cvskypeurl{not implemented}
+\cvgithub{not implemented}     
+
+@if (Model.LinkedIn != null)
+{
+    @Raw($"\\cvlinkedin{{{Model.LinkedIn}}}")
+}
+else
+{
+    @Raw("\\cvlinkedin{}")
+}
 
 \begin{document}
 \sidesection{
     @* \makeheaderprofile *@
     \makeheaderprofilenoimg
     \makeinfoprofile
-    \aboutme{Short section about myself.}
+    \aboutme{Not implemented}
+    
+    @* customsidesection can be used as many times as you want *@
     \customsidesection{Header profile section}{It's possible to hide the profile picture using \textbackslash\texttt{makeheaderprofilenoimg} instead than \textbackslash\texttt{makeheaderprofilenoimg} and then \textbackslash\texttt{profilepic\{image.png\}} can be removed.}
-    \customsidesection{Info profile section}{It's possible to hide rows created with \textbackslash\texttt{makeinfoprofile} command leaving the macros empty (e.g. \textbackslash\texttt{cvsitepersonal\{\}} instead than \textbackslash\texttt{cvsitepersonal\{example.com\}}).}
-    \customsidesection{Side section B, pag.1}{Integer condimentum sit amet dui sed fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit a nisi nec fermentum.}
+    
+    \customskills{Card games}{{Poker/1},{Black Jack/5},{Freecell/2},{Spider/3}}
+    
     \par\vfill
     \makefooterprofile{Footer profile for page one.}{Footer profile row two with some more informations.}
     
@@ -187,6 +207,7 @@ else
 
 %% end main section
 }
+
 % \newpage
 
 % \noindent

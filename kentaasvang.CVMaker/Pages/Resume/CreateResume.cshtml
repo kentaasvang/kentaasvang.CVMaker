@@ -6,11 +6,6 @@
 
 <h1> Create CV </h1>
 
-@if (Model.Path is not null)
-{
-    <embed src="~/Resumes/@Model.Path" alt="" width="1000" height="1000"/>
-}
-
 <form method="post"%>
     
     <fieldset>
@@ -37,9 +32,22 @@
         <input asp-for="Form!.Address" class="form-control"/>
         <span asp-validation-for="Form!.Address" class="text-danger"></span>
         
+        <label asp-for="Form!.Email" class="control-label"></label>
+        <input asp-for="Form!.Email" class="form-control"/>
+        <span asp-validation-for="Form!.Email" class="text-danger"></span>
+        
+        <label asp-for="Form!.LinkedIn" class="control-label"></label>
+        <input asp-for="Form!.LinkedIn" class="form-control"/>
+        <span asp-validation-for="Form!.LinkedIn" class="text-danger"></span>
+        
     </fieldset>
     <button type="submit">Create</button>
 </form>
+
+@if (Model.Path is not null)
+{
+    <embed src="~/Resumes/@Model.Path" alt="" width="1000" height="1000"/>
+}
 
 @* <form method="post"> *@
 @* *@
