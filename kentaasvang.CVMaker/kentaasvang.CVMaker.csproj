@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>aspnet-LagDinCv.WebGui-DD6BB201-EC2F-4BFF-82EE-6A55A9914839</UserSecretsId>
+        <PreserveCompilationContext>true</PreserveCompilationContext>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,9 +15,9 @@
 
     <ItemGroup>
       <PackageReference Include="kentaasvang.PdfLatex" Version="1.0.1" />
-      <PackageReference Include="kentaasvang.TemplatingEngine" Version="1.0.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+      <PackageReference Include="RazorLight" Version="2.3.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -78,6 +79,10 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Templates\twentysecond.cshtml" />
     </ItemGroup>
 
 </Project>

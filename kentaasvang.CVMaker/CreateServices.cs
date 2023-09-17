@@ -8,7 +8,7 @@ public static class CreateServices
 {
     public static void AddPdfBuilder(this IServiceCollection services)
     {
-        services.AddScoped<PdfBuilder>();
+        services.AddScoped<PdfManager>();
     }
 
     public static void AddWebUiComponents(this IServiceCollection services)

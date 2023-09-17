@@ -19,9 +19,9 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\\documentclass\[letterpaper]{twentysecondcv} % a4paper for A4
-\\usepackage\[utf8]{inputenc}
-\\usepackage{graphicx}
+\documentclass\[letterpaper]{twentysecondcv} % a4paper for A4
+\usepackage\[utf8]{inputenc}
+\usepackage{graphicx}
 %----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
 %----------------------------------------------------------------------------------------
